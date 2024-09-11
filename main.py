@@ -5,7 +5,6 @@ from registration import Registration
 from car_wash import CarWash, SoapOnly, ExtraService, LuxuryService
 from regist_record import RegistRecord
 
-# Example usage
 
 if __name__ == "__main__":
     # Test CarWash and its derived classes
@@ -32,9 +31,9 @@ if __name__ == "__main__":
     print(c2.check_out())
 
     # Test Worker class with RegistRecord
-    w1 = Worker("John Doe", "john.doe@example.com", 50000, "Engineer")
-    w2 = Worker("Jane Smith", "jane.smith@example.com", 55000, "Manager")
-    w3 = Worker("Abdullah", "abd@example.com", 550, "Technician")
+    w1 = Worker("Noman", "noman.doe@gmail.com", 50000, "Engineer")
+    w2 = Worker("kashif", "kashif.ali@gmail.com", 55000, "Manager")
+    w3 = Worker("Abdullah", "abd@gmail.com", 550, "Technician")
 
     # Display worker details and history
     print(w3.display_details())

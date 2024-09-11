@@ -42,7 +42,6 @@ class LuxuryService(CarWash):
         else:
             return "Invalid amount"
 
-# Example usage
 if __name__ == "__main__":
     # For price
     p1 = CarWash(100)
