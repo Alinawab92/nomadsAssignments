@@ -1,4 +1,4 @@
-class Regist_Record:
+class RegistRecord:
     def __init__(self):
         # Store the history and positions
         self.history = []

@@ -1,18 +1,17 @@
 from person import Person
-from regist_record import Regist_Record
+from regist_record import RegistRecord  # Correct import
 
 class Worker(Person):
-    workers_list = []  
-    
+    workers_list = []
+
     def __init__(self, name, email, salary, position):
         super().__init__(name, email)
-        self.salary = salary    
-        # Add the worker to the list
+        self.salary = salary
         Worker.add_worker(self)
 
-        #for regist record
-        self.regist_record = Regist_Record()
-        self.regist_record.add_record(position) 
+        # Initialize RegistRecord correctly
+        self.regist_record = RegistRecord()  # Use RegistRecord, not Regist_Record
+        self.regist_record.add_record(position)
 
     @classmethod
     def add_worker(cls, worker):
