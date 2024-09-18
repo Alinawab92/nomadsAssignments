@@ -1,3 +1,4 @@
+from worker import Worker
 class CarWash:
     def __init__(self, wash_price):
         self.wash_price = wash_price
@@ -12,7 +13,7 @@ class CarWash:
         else:
             return "Invalid amount"
 
-class SoapOnly(CarWash):
+class Tier1(CarWash):
     def __init__(self, wash_price):
         super().__init__(wash_price)
 
@@ -22,7 +23,7 @@ class SoapOnly(CarWash):
         else:
             return "Invalid amount"
 
-class ExtraService(CarWash):
+class Tier2(CarWash):
     def __init__(self, wash_price):
         super().__init__(wash_price)
 
@@ -32,17 +33,16 @@ class ExtraService(CarWash):
         else:
             return "Invalid amount"
 
-class LuxuryService(CarWash):
-    def __init__(self, wash_price):
+class Tier3(CarWash):
+    def __init__(self, wash_price, worker):
         super().__init__(wash_price)
+        self.worker = worker  # Has-a Worker
 
     def apply_luxury_service(self):
         if self.wash_price == 500:
-            return "Applying soap, polish, and inner clean wash"
+            return f"Applying soap, polish, and inner clean wash by {self.worker.get_worker_details()}"
         else:
             return "Invalid amount"
 
-if __name__ == "__main__":
-    # For price
-    p1 = CarWash(100)
-    print(p1.perform_wash())
+
+

@@ -1,17 +1,15 @@
-from person import Person
-from regist_record import RegistRecord  # Correct import
+from regist_record import RegistRecord
 
-class Worker(Person):
+class Worker:
     workers_list = []
 
-    def __init__(self, name, email, salary, position):
-        super().__init__(name, email)
+    def __init__(self, worker_id, salary, position):
+        self.worker_id = worker_id
         self.salary = salary
-        Worker.add_worker(self)
-
-        # Initialize RegistRecord correctly
-        self.regist_record = RegistRecord()  # Use RegistRecord, not Regist_Record
+        self.position = position
+        self.regist_record = RegistRecord()  # Initialize RegistRecord
         self.regist_record.add_record(position)
+        Worker.add_worker(self)
 
     @classmethod
     def add_worker(cls, worker):
@@ -21,8 +19,10 @@ class Worker(Person):
         self.regist_record.add_record(new_position)
 
     def display_details(self):
-        return (f"Name: {self.name}, Email: {self.email}, Salary: {self.salary}, "
-                f"{self.regist_record.get_status()}")
+        return (f"Worker ID: {self.worker_id}, Salary: {self.salary}, ")
+                #f"Position: {self.position}, {self.regist_record.get_status()}")
 
     def display_full_history(self):
         return self.regist_record.show_history()
+    
+
