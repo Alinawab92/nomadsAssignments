@@ -1,28 +1,26 @@
-from regist_record import RegistRecord
+from person import Person
 
-class Worker:
-    workers_list = []
-
-    def __init__(self, worker_id, salary, position):
-        self.worker_id = worker_id
+# Worker class
+class Worker(Person):
+    def __init__(self, name, email, salary):
+        super().__init__(name, email)
         self.salary = salary
-        self.position = position
-        self.regist_record = RegistRecord()  # Initialize RegistRecord
-        self.regist_record.add_record(position)
-        Worker.add_worker(self)
+        self.history = []
 
-    @classmethod
-    def add_worker(cls, worker):
-        cls.workers_list.append(worker)
+    def get_detail(self):
+        return f"{self.name} and email: {self.email} and salary: {self.salary}"
 
-    def change_position(self, new_position):
-        self.regist_record.add_record(new_position)
+    def employing_worker(self, position):
+        self.history.append(position)
+        return f"Position {position} added to history."
 
-    def display_details(self):
-        return (f"Worker ID: {self.worker_id}, Salary: {self.salary}, ")
-                #f"Position: {self.position}, {self.regist_record.get_status()}")
+    def show_history(self):
+        if self.history:
+            return f"Position History: {', '.join(self.history)}"
+        else:
+            return "No position history available"
 
-    def display_full_history(self):
-        return self.regist_record.show_history()
+
+
     
 

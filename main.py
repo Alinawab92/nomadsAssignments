@@ -1,22 +1,18 @@
-# main.py
-from vehicle import Vehicle
-from customer import Customer
-from carwash import Tier3
 from worker import Worker
+from tier1 import Tier1
+from tier2 import Tier2
+from tier3 import Tier3
 from entryrecord import EntryRecord
 
-# examples uses
 if __name__ == "__main__":
-    # Creating objects
-    vehicle = Vehicle("Hybrid", "2024")
-    customer = Customer("Ali", "haider2@gmail.com", "11-11-2023", vehicle)
-    worker = Worker(123, 88000, "Accountant")
-    car_wash = Tier3(500, worker)
-    entry = EntryRecord("10:00 AM", "11:00 AM", car_wash, customer, vehicle)
-    worker1 = Worker(234, 33000, "Manager")
+    worker = Worker("Abdullah", "abdullah@example.com", 3000)
+    tier1 = Tier1(basic_service=100)
+    tier2 = Tier2(extra_service=200)
+    tier3 = Tier3(500, name="Abdullah", email="haider@122",salary=5500)
+    entry_record = EntryRecord("09:00 AM", "10:00 AM", 500, "2024-01-01", "Sedan", "Model X")
 
-    # Output details
-    print(entry.get_details())
-    print(worker1.display_details())
-    print(worker1.display_full_history())
-
+    print(worker.get_detail())
+    print(tier1.perform_wash())
+    print(tier2.perform_wash())
+    print(tier3.perform_wash())
+    print(entry_record.get_details())
