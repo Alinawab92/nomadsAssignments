@@ -4,11 +4,8 @@ class CarWash:
         self.wash_price = wash_price
 
     def perform_wash(self):
-        return (f"100 Rs. for basic wash, "
-                f"200 Rs. for extra wash, "
-                f"500 Rs. for luxury wash")
-
-        
-
-
-
+        return (
+            f"100 Rs. for basic wash, "
+            f"200 Rs. for extra wash, "
+            f"500 Rs. for luxury wash"
+        )

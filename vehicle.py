@@ -5,5 +5,3 @@ class Vehicle:
 
     def get_vehicle_details(self):
         return f"Your vehicle type is: '{self.vehicle_type}' and model number is: '{self.model}'"
-
-

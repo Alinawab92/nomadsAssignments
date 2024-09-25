@@ -1,5 +1,6 @@
 from person import Person
 
+
 # Worker class
 class Worker(Person):
     def __init__(self, name, email, salary):
@@ -19,8 +20,3 @@ class Worker(Person):
             return f"Position History: {', '.join(self.history)}"
         else:
             return "No position history available"
-
-
-
-    
-
